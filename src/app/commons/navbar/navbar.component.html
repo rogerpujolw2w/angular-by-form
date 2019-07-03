@@ -13,8 +13,17 @@
           <a class="nav-link dropdown-toggle" routerLink='' routerLinkActive="router-link-active"  id="dropdown_almacen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Forms</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" routerLink='/myforms/form01'>Form 1</a>
+            <a class="dropdown-item" routerLink='/myforms/form02'>Form 2</a>
         </div>
       </li>
+
+      <ng-container *ngIf="verMenu=='1';">
+          <li class="nav-item active">
+              <a class="nav-link" routerLink='/home'>Home oculto</a>
+            </li>
+            </ng-container>
+
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

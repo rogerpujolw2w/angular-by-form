@@ -1,0 +1,12 @@
+<div>
+    <form #myform2>
+      <ng-template #nocoment><p [ngStyle]="{'color': 'red'}">Nothing</p></ng-template>
+      <input type="text" #usuario placeholder="{{pu}}" ><br>
+      <input type="password" #password placeholder="{{pp}}" ><br>
+      <button type="submit" (click)="createUser($event,myform2);" >Login</button>
+    </form>
+    <ng-container *ngIf="!displayerror; else nocoment;">
+        <label>{{ valorretorno }}</label>
+    </ng-container>
+
+  </div>

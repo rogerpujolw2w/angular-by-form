@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/classes/user';
+//import { NavbarComponent } from '../../commons/navbar/navbar.component';
 
 @Component({
   selector: 'app-form01component',
@@ -9,11 +10,14 @@ import { User } from '../../shared/classes/user';
 export class Form01componentComponent implements OnInit {
 
   usu: User=new User();
+  //nav: NavbarComponent = new NavbarComponent();
 
   constructor() { }
 
-  valorretorno: string="";
-  displayerror: boolean=false;
+  placeholder = { 'username' : 'Nombre de usuario' , 'userpass' : 'Clave' };
+
+  valorretorno: string = '';
+  displayerror: boolean = false;
 
   eventlogin(event:any, myform1:any):void {
 
@@ -26,7 +30,8 @@ export class Form01componentComponent implements OnInit {
       //this.valorretorno = myform1[0].value + ' - ' + myform1[1].value;
       this.usu.setUser(myform1[0].value);
       this.valorretorno = this.usu.getUser();
-
+      localStorage.setItem('logged', '1');
+      //this.nav.getStatus();
       myform1.reset();
     }
   }
