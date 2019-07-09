@@ -1,8 +1,8 @@
 <div>
   <form #myform1>
     <ng-template #nocoment><p [ngStyle]="{'color': 'red'}">Nothing</p></ng-template>
-    <input type="text" #usuario [placeholder]=placeholder.username ><br>
-    <input type="password" #password [placeholder]=placeholder.userpass ><br>
+    <input type="text" name="usuario" [placeholder]=placeholder.username [(ngModel)]="username" ><br>
+    <input type="password" name="password" [placeholder]=placeholder.userpass [(ngModel)]="password" ><br>
     <button type="submit" (click)="eventlogin($event,myform1);" >Login</button>
   </form>
   <ng-container *ngIf="!displayerror; else nocoment;">

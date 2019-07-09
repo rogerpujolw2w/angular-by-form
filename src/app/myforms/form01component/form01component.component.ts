@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/classes/user';
+import { FormArray } from '@angular/forms';
 //import { NavbarComponent } from '../../commons/navbar/navbar.component';
 
 @Component({
@@ -19,11 +20,17 @@ export class Form01componentComponent implements OnInit {
   valorretorno: string = '';
   displayerror: boolean = false;
 
+  username: string="";
+  password: string="";
+
   eventlogin(event:any, myform1:any):void {
 
     event.preventDefault();
 
-    if (myform1[0].value === '' || myform1[1].value === '') {
+    console.log(this.username);
+    console.log(this.password);
+
+/*     if (myform1[0].value === '' || myform1[1].value === '') {
       this.displayerror = true;
     } else {
       this.displayerror = false;
@@ -34,7 +41,7 @@ export class Form01componentComponent implements OnInit {
       //this.nav.getStatus();
       myform1.reset();
     }
-  }
+ */  }
 
   ngOnInit() {
   }
